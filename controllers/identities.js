@@ -22,4 +22,12 @@ router.get("/new", async (req, res) => {
     res.render("identities/new.ejs");
 });
 
+router.post("/", async (req, res) => {
+    // console.log("Who is the user", req.session.user._id);
+    req.body.owner = req.session.user._id;
+    console.log("Form data received", req.body);
+    await Identity.create(req.body);
+    res.redirect("/identities");
+});
+
 module.exports = router;

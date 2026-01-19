@@ -8,7 +8,7 @@
 <body>
     <%- include("../partials/_navbar.ejs") %>
     <h1>Add a new Identity!</h1>
-    <form action="" method=""> <!-- removing "required" property for every checkbox in form, though I want it as required, because it forces user to check every "required" input type checkbox, thus forcing each to take the value of True -->
+    <form action="/identities" method="POST"> <!-- removing "required" property for every checkbox in form, though I want it as required, because it forces user to check every "required" input type checkbox, thus forcing each to take the value of True -->
 
         <label for="name">Identity name:</label>
         <input type="text" name="name" id="name" required />
