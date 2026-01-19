@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Identity</title>
+</head>
+<body>
+    <%- include("../partials/_navbar.ejs") %>
+    <h1>Add a new Identity!</h1>
+    <form action="" method=""> <!-- removing "required" property for every checkbox in form, though I want it as required, because it forces user to check every "required" input type checkbox, thus forcing each to take the value of True -->
+
+        <label for="name">Identity name:</label>
+        <input type="text" name="name" id="name" required />
+
+        <label for="last-updated">Last updated:</label>
+        <input type="date" name="lastUpdated" id="last-updated" required />
+
+        <label for="pwd-reused">Password reused?</label>
+        <input type="checkbox" name="pwdReused" id="pwd-reused" />
+
+        <label for="stored-in-pwd-manager">Stored in a password manager?</label>
+        <input type="checkbox" name="storedInPwdManager" id="stored-in-pwd-manager" />
+
+        <label for="mfa-present">Uses MFA?</label>
+        <input type="checkbox" name="mfaPresent" id="mfa-present" />
+        
+        <label for="pwd-strength">Password strength:</label>
+        <!-- <input type="select" name="pwdStrength" id="pwd-strength" required /> -->
+        <select name="pwdStrength" id="pwd-strength" required >
+            <option value="weak">Weak</option>
+            <option value="medium">Medium</option>
+            <option value="strong">Strong</option>
+        </select>
+        <p>[Boilerplate]</p> <!-- Add explainer text here! -->
+
+        <label for="pwned-status">Pwned status:</label>
+        <input type="checkbox" name="pwnedStatus" id="pwned-status" />
+        
+        <label for="notes">Notes:</label>
+        <!-- <input type="textarea" name="notes" id="notes" /> -->
+        <textarea name="notes" id="notes" rows="4" cols="10" wrap="hard"></textarea> <!-- disable resizing of textarea using CSS -->
+
+        <button type="submit">Submit!</button>
+    </form>
+</body>
+</html>

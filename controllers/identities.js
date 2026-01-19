@@ -17,4 +17,9 @@ router.get("/", async (req, res) => {
     }
 });
 
+router.get("/new", async (req, res) => {
+    // res.send("Add a new identity here!");
+    res.render("identities/new.ejs");
+});
+
 module.exports = router;

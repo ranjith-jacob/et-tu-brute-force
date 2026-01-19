@@ -11,15 +11,18 @@ const identitySchema = new mongoose.Schema({
     },
     pwdReused: {
         type: Boolean,
-        required: true
+        required: true,
+        default: false
     },
     storedInPwdManager: {
         type: Boolean,
-        required: true
+        required: true,
+        default: false
     },
     mfaPresent: {
         type: Boolean,
-        required: true
+        required: true,
+        default: false
     },
     pwdStrength: { // dropdown menu to be added in ejs, along with paragraph
         type: String,
@@ -27,7 +30,8 @@ const identitySchema = new mongoose.Schema({
     },
     pwnedStatus: { // direct to haveibeenpwned for manual check
         type: Boolean,
-        required: true
+        required: true,
+        default: false
     },
     notes: String,
     owner: {
