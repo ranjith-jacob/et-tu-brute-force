@@ -9,5 +9,13 @@
     <%- include("../partials/_navbar.ejs") %>
     <h1>Here're all of your Identities!</h1>
     <a href="/identities/new">Add a New Identity!</a>
+
+    <ul>
+        <% identities.forEach((identity) => { %>
+        <li>
+            An identity used for <%= identity.name %>, owned by <%= identity.owner.username %>.
+        </li>
+        <% }); %>
+    </ul>
 </body>
 </html>
