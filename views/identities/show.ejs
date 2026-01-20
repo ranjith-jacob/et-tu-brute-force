@@ -28,7 +28,7 @@
     <h2>Owner</h2>
         <% if (identity.owner._id.equals(user._id)) { %>
             <p>You own this!</p>
-            
+            <a href="/identities/<%= identity._id %>/edit">Edit this Identity</a>
             <form action="/identities/<%=identity._id %>?_method=DELETE" method="POST">
                 <button type="submit">Delete this Identity</button>
             </form>
