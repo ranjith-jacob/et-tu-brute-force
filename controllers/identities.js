@@ -59,8 +59,10 @@ router.get("/:identityId", async (req, res) => {
 
 router.delete("/:identityId", async (req, res) => {
   try {
-    console.log("identityId: ", req.params.identityId);
-    console.log("user: ", req.session.user);
+    // console.log("identityId: ", req.params.identityId);
+    // console.log("user: ", req.session.user);
+    
+    const identity = await Identity.findById(req.params.identityId);
     res.send(`A DELETE request was issued for ${req.params.identityId}`);
   } catch (error) {
     console.log(error);
