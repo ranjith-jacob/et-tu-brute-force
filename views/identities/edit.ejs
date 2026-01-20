@@ -8,5 +8,95 @@
 <body>
     <%- include("../partials/_navbar.ejs") %>
     <h1>Edit an Identity!</h1>
+
+    <form type="" method="">
+
+        <label for="name">Identity name:</label>
+        <input
+            type="text"
+            name="name"
+            id="name"
+            value="<%= identity.name %>"
+        />
+
+        <label for="last-updated">Last updated:</label>
+        <input
+            type="date"
+            name="lastUpdated"
+            id="last-updated"
+            value="<%= identity.lastUpdated.toISOString().substring(0, 10) %>"
+        />
+
+        <label for="pwd-reused">Has this password been reused?</label>
+        <input
+            type="checkbox"
+            name="pwdReused"
+            id="pwd-reused"
+            <%= identity.pwdReused ? "checked" : "" %>
+        />
+
+        <label for="stored-in-pwd-manager">Is this password being stored in a Password Manager?</label>
+        <input
+            type="checkbox"
+            name="storedInPwdManager"
+            id="stored-in-pwd-manager"
+            <%= identity.storedInPwdManager ? "checked" : "" %>
+        />
+
+        <label for="mfa-present">Is MFA in use for this Identity?</label>
+        <input
+            type="checkbox"
+            name="mfaPresent"
+            id="mfa-present"
+            <%= identity.mfaPresent ? "checked" : "" %>
+        />
+        
+        <label for="pwd-strength">Password strength:</label>
+        <select
+            name="pwdStrength"
+            id="pwd-strength"
+        >
+            <option
+                value="weak"
+                <%= identity.pwdStrength === "weak" ? "selected" : "" %>
+            >
+            Weak
+            </option>
+            <option
+                value="medium"
+                <%= identity.pwdStrength === "medium" ? "selected" : "" %>
+            >
+            Medium
+            </option>
+            <option
+                value="strong"
+                <%= identity.pwdStrength === "strong" ? "selected" : "" %>
+            >
+            Strong
+            </option>
+        </select>
+        <p>[Boilerplate]</p>
+
+        <label for="pwned-status">Has this password been leaked before?</label>
+        <input
+            type="checkbox"
+            name="pwnedStatus"
+            id="pwned-status"
+            <%= identity.pwnedStatus ? "checked" : "" %>
+        />
+        
+        <label for="notes">Notes:</label>
+        <!-- <textarea> doesn't take attribute of 'value' in HTML5, workaround below -->
+        <textarea
+            name="notes"
+            id="notes"
+            rows="4"
+            cols="10"
+            wrap="hard"
+        ><%= identity.notes %>
+        </textarea>
+        
+        <button type="submit">Edit Identity</button>
+    </form>
 </body>
 </html>
