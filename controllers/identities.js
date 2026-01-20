@@ -79,8 +79,13 @@ router.delete("/:identityId", async (req, res) => {
 
 router.get("/:identityId/edit", async (req, res) => {
   try {
-    console.log("identityId: ", req.params.identityId);
-    res.send("Identities edit view");
+    // console.log("identityId: ", req.params.identityId);
+    // res.send("Identities edit view");
+
+    const currentIdentity = await Identity.findById(req.params.identityId);
+    res.render("identities/edit.ejs", {
+      identity: currentIdentity
+    });
   } catch (error) {
     console.log(error);
     res.redirect("/");
