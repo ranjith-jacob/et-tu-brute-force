@@ -5,7 +5,9 @@ const Identity = require("../models/identity");
 
 router.get("/", async (req, res) => {
     try {
-        const getAllIdentities = await Identity.find({}).populate("owner");
+        const getAllIdentities = await Identity.find({
+          owner: req.session.user._id // filters Identities by owner
+        }).populate("owner");
         console.log("all of the Identities", getAllIdentities);
         // res.send("Identities index page");
         res.render("./identities/index.ejs", {
@@ -40,12 +42,13 @@ router.get("/:identityId", async (req, res) => {
     // console.log("identityId: ", req.params.identityId);
     // res.send("Identities show page");
     
-    const getAllIdentities = await Identity.findById(
-      req.params.identityId
-    ).populate("owner");
+    const populatedIdentity = await Identity.findById({
+      owner: req.session.user._id, //! does not restrict Identities to viewing only by owner, investigate
+      _id: req.params.identityId //! ditto
+    }).populate("owner");
 
     res.render("identities/show.ejs", {
-      identity: getAllIdentities,
+      identity: populatedIdentity
     });
   } catch (error) {
     console.log(error);
