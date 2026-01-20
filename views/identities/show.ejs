@@ -10,14 +10,14 @@
 
     <h1>Your identity for <%= identity.name %></h1>
 
-    <h2>Details</h2> <!-- render all booleans in Yes/No format -->
-    <p>Last updated: <%= identity.lastUpdated %> </p> <!-- render date in more user-friendly format -->
-    <p>Has this password been reused? <%= identity.pwdReused %> </p>
-    <p>Is this password being stored in a Password Manager? <%= identity.storedInPwdManager %></p>
-    <p>Is MFA in use for this Identity? <%= identity.mfaPresent %></p>
-    <p>Password strength: <%= identity.pwdStrength %></p>
-    <p>Has this password been leaked before? <%= identity.pwnedStatus %></p>
-    <p>Notes: <%= identity.notes %></p>
+    <h2>Details</h2>
+    <p>Last updated: <%= identity.lastUpdated %> </p> <!-- 1) render date in more user-friendly format, 2) set max limits to date -->
+    <p>Has this password been reused? <%= identity.pwdReused === true ? "Yes" : "No" %> </p>
+    <p>Is this password being stored in a Password Manager? <%= identity.storedInPwdManager === true ? "Yes" : "No" %> </p>
+    <p>Is MFA in use for this Identity? <%= identity.mfaPresent === true ? "Yes" : "No" %> </p>
+    <p>Password strength: <%= identity.pwdStrength %> </p>
+    <p>Has this password been leaked before? <%= identity.pwnedStatus === true ? "Yes" : "No" %> </p>
+    <p>Notes: <%= identity.notes %> </p>
 
 </body>
 </html>

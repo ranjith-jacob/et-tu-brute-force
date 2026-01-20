@@ -44,8 +44,6 @@ router.get("/:identityId", async (req, res) => {
       req.params.identityId
     ).populate("owner");
 
-    // req.body.pwdReused = req.body.pwdReused === true ? "Yes" : "No"; //! continue investigating this
-
     res.render("identities/show.ejs", {
       identity: getAllIdentities,
     });
