@@ -11,7 +11,13 @@
     <h1>Your identity for <%= identity.name %></h1>
 
     <h2>Details</h2>
-    <p>Last updated: <%= identity.lastUpdated %> </p> <!-- 1) render date in more user-friendly format, 2) set max limits to date -->
+    <!-- changes rendering of date using .toLocaleDateString -->
+    <p>Last updated: <%= identity.lastUpdated.toLocaleDateString(undefined, {
+        year: "numeric",
+        month: "long",
+        day: "numeric"
+        }); %>
+    </p>
     <p>Has this password been reused? <%= identity.pwdReused === true ? "Yes" : "No" %> </p>
     <p>Is this password being stored in a Password Manager? <%= identity.storedInPwdManager === true ? "Yes" : "No" %> </p>
     <p>Is MFA in use for this Identity? <%= identity.mfaPresent === true ? "Yes" : "No" %> </p>
