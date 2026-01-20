@@ -46,11 +46,22 @@ router.get("/:identityId", async (req, res) => {
       owner: req.session.user._id, // now restricts Identities to viewing only by its owner
       _id: req.params.identityId // required syntax for .findOne
     }).populate("owner");
-    
+
     if (!populatedIdentity) return res.redirect("/identities") //! change this to a 'not authorised' page
     res.render("identities/show.ejs", {
       identity: populatedIdentity
     });
+  } catch (error) {
+    console.log(error);
+    res.redirect("/");
+  }
+});
+
+router.delete("/:identityId", async (req, res) => {
+  try {
+    console.log("identityId: ", req.params.identityId);
+    console.log("user: ", req.session.user);
+    res.send(`A DELETE request was issued for ${req.params.identityId}`);
   } catch (error) {
     console.log(error);
     res.redirect("/");
