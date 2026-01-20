@@ -77,4 +77,14 @@ router.delete("/:identityId", async (req, res) => {
   }
 });
 
+router.get("/:identityId/edit", async (req, res) => {
+  try {
+    console.log("identityId: ", req.params.identityId);
+    res.send("Identities edit view");
+  } catch (error) {
+    console.log(error);
+    res.redirect("/");
+  }
+});
+
 module.exports = router;
