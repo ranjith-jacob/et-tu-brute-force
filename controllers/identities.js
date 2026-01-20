@@ -30,9 +30,29 @@ router.post("/", async (req, res) => {
     req.body.mfaPresent = req.body.mfaPresent === "on" ? true : false;
     req.body.pwnedStatus = req.body.pwnedStatus === "on" ? true : false;
     console.log("Form data received", req.body);
-    // req.body.pwdReused = req.body.pwdReused === "on" ? true : false;
+    // req.body.pwdReused = req.body.pwdReused === "on" ? "true" : "false";
     await Identity.create(req.body);
     res.redirect("/identities");
+});
+
+router.get("/:identityId", async (req, res) => {
+  try {
+    // console.log("identityId: ", req.params.identityId);
+    // res.send("Identities show page");
+    
+    const getAllIdentities = await Identity.findById(
+      req.params.identityId
+    ).populate("owner");
+
+    // req.body.pwdReused = req.body.pwdReused === true ? "Yes" : "No"; //! continue investigating this
+
+    res.render("identities/show.ejs", {
+      identity: getAllIdentities,
+    });
+  } catch (error) {
+    console.log(error);
+    res.redirect("/");
+  }
 });
 
 module.exports = router;

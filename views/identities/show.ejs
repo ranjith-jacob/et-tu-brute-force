@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= identity.owner.username %>'s identity</title>
+</head>
+<body>
+    <%- include('../partials/_navbar.ejs') %>
+
+    <h1>Your identity for <%= identity.name %></h1>
+
+    <h2>Details</h2> <!-- render all booleans in Yes/No format -->
+    <p>Last updated: <%= identity.lastUpdated %> </p> <!-- render date in more user-friendly format -->
+    <p>Has this password been reused? <%= identity.pwdReused %> </p>
+    <p>Is this password being stored in a Password Manager? <%= identity.storedInPwdManager %></p>
+    <p>Is MFA in use for this Identity? <%= identity.mfaPresent %></p>
+    <p>Password strength: <%= identity.pwdStrength %></p>
+    <p>Has this password been leaked before? <%= identity.pwnedStatus %></p>
+    <p>Notes: <%= identity.notes %></p>
+
+</body>
+</html>

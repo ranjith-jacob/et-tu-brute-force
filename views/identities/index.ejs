@@ -14,6 +14,7 @@
         <% identities.forEach((identity) => { %>
         <li>
             An identity used for <%= identity.name %>, owned by <%= identity.owner.username %>.
+            <a href="/identities/<%= identity._id %>">View more details.</a>
         </li>
         <% }); %>
     </ul>
