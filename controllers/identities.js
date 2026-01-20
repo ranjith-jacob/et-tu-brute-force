@@ -42,11 +42,12 @@ router.get("/:identityId", async (req, res) => {
     // console.log("identityId: ", req.params.identityId);
     // res.send("Identities show page");
     
-    const populatedIdentity = await Identity.findById({
-      owner: req.session.user._id, //! does not restrict Identities to viewing only by owner, investigate
-      _id: req.params.identityId //! ditto
+    const populatedIdentity = await Identity.findOne({ // uses .findOne instead of .findById as latter does not silo each user account's Identities
+      owner: req.session.user._id, // now restricts Identities to viewing only by its owner
+      _id: req.params.identityId // required syntax for .findOne
     }).populate("owner");
-
+    
+    if (!populatedIdentity) return res.redirect("/identities") //! change this to a 'not authorised' page
     res.render("identities/show.ejs", {
       identity: populatedIdentity
     });
