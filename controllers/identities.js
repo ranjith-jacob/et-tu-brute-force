@@ -63,11 +63,14 @@ router.delete("/:identityId", async (req, res) => {
     // console.log("user: ", req.session.user);
     const identity = await Identity.findById(req.params.identityId);
     if (identity.owner.equals(req.session.user._id)) {
-      console.log("Permission granted");
+      // console.log("Permission granted");
+      await identity.deleteOne();
+      res.redirect("/identities");
     } else {
-      console.log("Permission denied");
+      // console.log("Permission denied");
+      res.send("You don't have permission to do that.");
     }
-    res.send(`A DELETE request was issued for ${req.params.identityId}`);
+    // res.send(`A DELETE request was issued for ${req.params.identityId}`);
   } catch (error) {
     console.log(error);
     res.redirect("/");
