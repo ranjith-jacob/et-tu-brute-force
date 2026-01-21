@@ -96,7 +96,15 @@ router.put("/:identityId", async (req, res) => {
   try {
     // console.log("identityId:", req.params.identityId);
     // console.log("user:", req.session.user);
+
     const currentIdentity = await Identity.findById(req.params.identityId);
+
+    if (currentIdentity.owner.equals(req.session.user._id)) {
+      console.log("Permission granted");
+    } else {
+      console.log("Permission denied");
+    }
+    
     res.send(`A PUT request was issued for ${req.params.identityId}`);
   } catch (error) {
     console.log(error);
