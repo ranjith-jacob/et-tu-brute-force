@@ -26,6 +26,7 @@
         <p>Has this password been leaked before? <%= identity.pwnedStatus === true ? "Yes" : "No" %> </p>
         <p>Notes: <%= identity.notes %> </p>
 
+        <!-- restructure below to be more relevant -->
     <h2>Owner</h2>
         <% if (identity.owner._id.equals(user._id)) { %>
             <p>You own this!</p>
