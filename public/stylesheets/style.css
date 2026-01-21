@@ -9,3 +9,84 @@ body {
   background-color: #f9f7f0;
 }
 
+.landing-header {
+  display: flex;
+  flex-direction: row;
+  height: 15%;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.logo-container {
+  display: flex;
+  flex-direction: row;
+  width: 50%;
+  margin: 20px 35px;
+}
+
+.logo-container > h1 {
+  margin: 0;
+  font-size: 1.4em;
+}
+
+/* .heading-icon {
+  background-image: url('https://cdn-icons-png.flaticon.com/128/11382/11382524.png');
+  width: 1.4em;
+  height: 1.4em;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin: 2px;
+  padding-left: 5px;
+} */
+
+.landing-image {
+  background-image: url("https://images.pexels.com/photos/4291/door-green-closed-lock.jpg");
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 0 0 0 -8px;
+}
+
+.auth-links,
+.nav-links {
+  margin: 25px 20px;
+}
+
+.auth-links > a {
+  color: white;
+  padding: 10px 25px;
+  border-radius: 10px;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.auth-links > a:first-child {
+  background-color: #274c9c;
+}
+
+.auth-links > a:first-child:hover {
+  background-color: black;
+  color: white;
+}
+
+.auth-links > a:nth-child(2) {
+  background-color: #6f8dae;
+}
+
+.auth-links > a:nth-child(2):hover {
+  background-color: black;
+  color: white;
+}
+
+.nav-links > a {
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: bold;
+  color: black;
+}
+
+.nav-links > a:hover {
+  color: #6f8dae;
+  text-decoration: underline;
+}
+
