@@ -94,8 +94,9 @@ router.get("/:identityId/edit", async (req, res) => {
 
 router.put("/:identityId", async (req, res) => {
   try {
-    console.log("identityId:", req.params.identityId);
-    console.log("user:", req.session.user);
+    // console.log("identityId:", req.params.identityId);
+    // console.log("user:", req.session.user);
+    const currentIdentity = await Identity.findById(req.params.identityId);
     res.send(`A PUT request was issued for ${req.params.identityId}`);
   } catch (error) {
     console.log(error);
