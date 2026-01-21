@@ -173,3 +173,57 @@ button:hover {
   z-index: -10;
   left: -10px;
 } */
+
+.index-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px;
+  width: 90%;
+}
+
+.index-header > h1 {
+  text-transform: uppercase;
+  font-size: 1.5em;
+}
+
+.index-header > a {
+  padding: 6px 12px;
+  border: 1px solid gray;
+  text-decoration: none;
+  color: black;
+}
+
+.index-header > a:hover {
+  background-color: black;
+  color: white;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px 70px;
+}
+
+.card-container > a {
+  padding: 12px 25px;
+  border: 1px solid gray;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  margin: 5px 30px 50px;
+  color: black;
+}
+
+.card-container > a:hover {
+  background-color: black;
+  color: white;
+}
+
+a > h4 {
+  font-weight: normal;
+  font-size: 1em;
+}
