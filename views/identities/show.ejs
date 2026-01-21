@@ -9,34 +9,44 @@
 <body>
     <%- include("../partials/_navbar.ejs") %>
 
-    <h1>Your identity for <%= identity.name %></h1>
+    <div class="show-page-container">
+        <div class="show-img"></div>
+        <div class="show-info-container">
+            <div class="show-header">
+                <h1>Your identity for <%= identity.name %></h1>
+                <!-- changes default rendering of date format using .toLocaleDateString -->
+                <h3>Last updated: <%= identity.lastUpdated.toLocaleDateString(undefined, {
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric"
+                    }); %>
+                </h3>
+            </div>
 
-    <h2>Details</h2>
-    <!-- changes default rendering of date format using .toLocaleDateString -->
-    <!-- render weak/medium/strong with initial caps -->
-        <p>Last updated: <%= identity.lastUpdated.toLocaleDateString(undefined, {
-            year: "numeric",
-            month: "long",
-            day: "numeric"
-            }); %>
-        </p>
-        <p>Has this password been reused? <%= identity.pwdReused === true ? "Yes" : "No" %> </p>
-        <p>Is this password being stored in a Password Manager? <%= identity.storedInPwdManager === true ? "Yes" : "No" %> </p>
-        <p>Is MFA in use for this Identity? <%= identity.mfaPresent === true ? "Yes" : "No" %> </p>
-        <p>Password strength: <%= identity.pwdStrength %> </p>
-        <p>Has this password been leaked before? <%= identity.pwnedStatus === true ? "Yes" : "No" %> </p>
-        <p>Notes: <%= identity.notes %> </p>
+            <div class="show-details-container">
+                <h3>Details</h3>
+                <!-- render weak/medium/strong with initial caps -->
+                    <p>Has this password been reused? <%= identity.pwdReused === true ? "Yes" : "No" %> </p>
+                    <p>Is this password being stored in a Password Manager? <%= identity.storedInPwdManager === true ? "Yes" : "No" %> </p>
+                    <p>Is MFA in use for this Identity? <%= identity.mfaPresent === true ? "Yes" : "No" %> </p>
+                    <p>Password strength: <%= identity.pwdStrength %> </p>
+                    <p>Has this password been leaked before? <%= identity.pwnedStatus === true ? "Yes" : "No" %> </p>
+                    <p>Notes: <%= identity.notes %> </p>
 
-        <!-- restructure below to be more relevant -->
-    <h2>Owner</h2>
-        <% if (identity.owner._id.equals(user._id)) { %>
-            <p>You own this!</p>
-            <a href="/identities/<%= identity._id %>/edit">Edit this Identity</a>
-            <form action="/identities/<%=identity._id %>?_method=DELETE" method="POST">
-                <button type="submit">Delete this Identity</button>
-            </form>
-        <% } else { %>
-            <p>You don't own this Identity, <%= identity.owner.username %> does!</p>
-        <% } %>
+                    <!-- restructure below to be more relevant -->
+                    <% if (identity.owner._id.equals(user._id)) { %>
+                    <div class="owner-container">
+                        <p>You own this!</p>
+                        <a href="/identities/<%= identity._id %>/edit">Edit this Identity</a>
+                        <form action="/identities/<%=identity._id %>?_method=DELETE" method="POST">
+                            <button type="submit">Delete this Identity</button>
+                        </form>
+                    </div>
+                    <% } else { %>
+                    <p>You don't own this Identity, <%= identity.owner.username %> does!</p>
+                    <% } %>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
