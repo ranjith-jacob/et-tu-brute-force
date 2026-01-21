@@ -90,3 +90,75 @@ body {
   text-decoration: underline;
 }
 
+.signup-page,
+.signin-page {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 90%;
+}
+
+.signup-form-container-1,
+.signin-form-container-1 {
+  width: 60%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.signup-form-container-2,
+.signin-form-container-2 {
+  padding: 10px 30px 20px;
+  border: 1px solid gray;
+}
+
+.signup-form-container-2 > h1,
+.signin-form-container-2 > h1 {
+  font-weight: normal;
+  text-transform: uppercase;
+  font-size: 1.5em;
+}
+
+.signup-form-container-2 > form,
+.signin-form-container-2 > form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-size: 0.9em;
+}
+
+input {
+  border: 1px solid rgb(190, 190, 190);
+  border-radius: 10px;
+  margin: 10px 0;
+  width: 15em;
+  padding: 5px;
+}
+
+button {
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-weight: bold;
+  background-color: #274c9c;
+  padding: 7px 15px;
+  margin: 10px 0;
+}
+
+button:hover {
+  background-color: black;
+}
+
+/* .signup-img {
+  background-image: url('https://images.unsplash.com/photo-1600607687486-6cced9976e79');
+  min-height: 110vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 40%;
+  position: relative;
+  z-index: -10;
+} */
