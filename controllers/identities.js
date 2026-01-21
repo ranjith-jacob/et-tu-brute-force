@@ -27,6 +27,8 @@ router.get("/new", async (req, res) => {
 router.post("/", async (req, res) => {
     // console.log("Who is the user", req.session.user._id);
     req.body.owner = req.session.user._id;
+
+    // performs type conversion for checkbox values
     req.body.pwdReused = req.body.pwdReused === "on" ? true : false;
     req.body.storedInPwdManager = req.body.storedInPwdManager === "on" ? true : false;
     req.body.mfaPresent = req.body.mfaPresent === "on" ? true : false;
@@ -97,17 +99,25 @@ router.put("/:identityId", async (req, res) => {
     // console.log("identityId:", req.params.identityId);
     // console.log("user:", req.session.user);
 
-    const currentIdentity = await Identity.findById(req.params.identityId);
+    // type conversion below resolves CastError
+    req.body.pwdReused = req.body.pwdReused === "on" ? true : false;
+    req.body.storedInPwdManager = req.body.storedInPwdManager === "on" ? true : false;
+    req.body.mfaPresent = req.body.mfaPresent === "on" ? true : false;
+    req.body.pwnedStatus = req.body.pwnedStatus === "on" ? true : false;
 
+    const currentIdentity = await Identity.findById(req.params.identityId);
     if (currentIdentity.owner.equals(req.session.user._id)) {
-      console.log("Permission granted");
+      // console.log("Permission granted");
+      await currentIdentity.updateOne(req.body);
+      res.redirect("/identities");
     } else {
-      console.log("Permission denied");
+      // console.log("Permission denied");
+      res.send("You don't have permission to do that.");
     }
-    
-    res.send(`A PUT request was issued for ${req.params.identityId}`);
+    // res.send(`A PUT request was issued for ${req.params.identityId}`);
   } catch (error) {
     console.log(error);
+    // res.send(error);
     res.redirect("/");
   }
 });
