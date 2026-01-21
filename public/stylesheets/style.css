@@ -227,3 +227,37 @@ a > h4 {
   font-weight: normal;
   font-size: 1em;
 }
+
+.new-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 80%;
+}
+
+.new-form-container {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid gray;
+  padding: 10px 40px;
+}
+
+.new-form-container > h1 {
+  text-transform: uppercase;
+  font-weight: normal;
+  font-size: 1.6em;
+}
+
+.new-form-container > form {
+  display: flex;
+  flex-direction: column;
+}
+
+.new-form-container > form > input {
+  width: 38em;
+}
+
+.new-form-container > form > button {
+  margin-bottom: 20px;
+}
