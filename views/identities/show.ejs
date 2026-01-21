@@ -11,7 +11,7 @@
     <h1>Your identity for <%= identity.name %></h1>
 
     <h2>Details</h2>
-    <!-- changes rendering of date using .toLocaleDateString -->
+    <!-- changes default rendering of date format using .toLocaleDateString -->
         <p>Last updated: <%= identity.lastUpdated.toLocaleDateString(undefined, {
             year: "numeric",
             month: "long",

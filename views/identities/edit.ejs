@@ -9,7 +9,7 @@
     <%- include("../partials/_navbar.ejs") %>
     <h1>Edit an Identity!</h1>
 
-    <form type="" method="">
+    <form action="/identities/<%= identity._id %>?_method=PUT" method="POST">
 
         <label for="name">Identity name:</label>
         <input
