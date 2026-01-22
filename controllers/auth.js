@@ -53,7 +53,7 @@ router.post("/sign-in", async (req, res)  => {
             _id: userInDatabase._id
         };
         req.session.save(() => {
-            res.redirect("/");
+            res.redirect("/identities");
         })
         // res.redirect("/");
     } catch (error) {
