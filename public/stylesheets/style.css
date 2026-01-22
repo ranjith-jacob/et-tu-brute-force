@@ -6,7 +6,7 @@ body {
   flex-direction: column;
   height: 100vh;
   width: 100vw;
-  background-color: #f9f7f0;
+  background-color: rgba(249, 247, 240, 1);
 }
 
 .landing-header {
@@ -90,6 +90,37 @@ body {
   text-decoration: underline;
 }
 
+.signup-page {
+    background-image: url("https://images.pexels.com/photos/4291/door-green-closed-lock.jpg");
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: rgba(249, 247, 240, 0.4);
+    /* opacity: 1; */
+    background-blend-mode: lighten;
+    margin: 0 0 0 -8px;
+}
+
+/* .signup-img {
+    background-image: url("https://images.pexels.com/photos/4291/door-green-closed-lock.jpg");
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+} */
+
+/* .signin-img {
+  background-image: url('https://images.unsplash.com/photo-1479839672679-a46483c0e7c8');
+  min-height: 110vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 40%;
+  position: relative;
+  z-index: -10;
+  left: -10px;
+} */
+
 .signup-page,
 .signin-page {
   display: flex;
@@ -112,6 +143,8 @@ body {
 .signin-form-container-2 {
   padding: 10px 30px 20px;
   border: 1px solid gray;
+  background-color: rgba(249, 247, 240, 1);
+  /* opacity: 0.6; */
 }
 
 .signup-form-container-2 > h1,
@@ -126,6 +159,11 @@ body {
   display: flex;
   flex-direction: column;
 }
+
+/* .signup-form-container-2 > form > button,
+.signin-form-container-2 > form > button {
+
+} */
 
 label {
   font-size: 0.9em;
@@ -152,27 +190,6 @@ button {
 button:hover {
   background-color: black;
 }
-
-/* .signup-img {
-  background-image: url('https://images.unsplash.com/photo-1600607687486-6cced9976e79');
-  min-height: 110vh;
-  background-size: cover;
-  background-repeat: no-repeat;
-  width: 40%;
-  position: relative;
-  z-index: -10;
-} */
-
-/* .signin-img {
-  background-image: url('https://images.unsplash.com/photo-1479839672679-a46483c0e7c8');
-  min-height: 110vh;
-  background-size: cover;
-  background-repeat: no-repeat;
-  width: 40%;
-  position: relative;
-  z-index: -10;
-  left: -10px;
-} */
 
 .index-header {
   display: flex;
