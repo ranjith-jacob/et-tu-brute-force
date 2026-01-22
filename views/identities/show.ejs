@@ -13,7 +13,7 @@
         <div class="show-img"></div>
         <div class="show-info-container">
             <div class="show-header">
-                <h1>Your identity for <%= identity.name %></h1>
+                <h1>Identity for <%= identity.name %></h1>
                 <!-- changes default rendering of date format using .toLocaleDateString -->
                 <h3>Last updated: <%= identity.lastUpdated.toLocaleDateString(undefined, {
                     year: "numeric",
@@ -42,8 +42,10 @@
                             <button type="submit">Delete this Identity</button>
                         </form>
                     </div>
+                    <!-- set up unauthorised pg for below -->
                     <% } else { %>
-                    <p>You don't own this Identity, <%= identity.owner.username %> does!</p>
+                    <p>You are not authorised to access this.</p>
+                    <%= res.redirect("/"); %>
                     <% } %>
             </div>
         </div>
