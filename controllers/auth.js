@@ -52,7 +52,10 @@ router.post("/sign-in", async (req, res)  => {
             username: userInDatabase.username,
             _id: userInDatabase._id
         };
-        res.redirect("/");
+        req.session.save(() => {
+            res.redirect("/");
+        })
+        // res.redirect("/");
     } catch (error) {
         console.log(error);
         res.redirect("/");
@@ -61,8 +64,10 @@ router.post("/sign-in", async (req, res)  => {
 
 router.get("/sign-out", (req, res) => {
 // res.send("The user wants to sign out!");
-req.session.destroy();
-res.redirect("/");
+req.session.destroy(() => {
+    res.redirect("/");
+});
+// res.redirect("/");
 });
 
 module.exports = router;
