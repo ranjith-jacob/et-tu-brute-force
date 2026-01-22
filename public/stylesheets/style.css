@@ -29,6 +29,11 @@ body {
   font-size: 1.4em;
 }
 
+.logo-container > h1 > a {
+    text-decoration: none;
+    color: black;
+}
+
 /* .heading-icon {
   background-image: url('https://cdn-icons-png.flaticon.com/128/11382/11382524.png');
   width: 1.4em;
@@ -61,21 +66,35 @@ body {
 }
 
 .auth-links > a:first-child {
-  background-color: #274c9c;
+  /* background-color: rgb(39, 76, 156); */
+    background: linear-gradient(104deg,rgb(54, 181, 116) 60%,rgb(39, 38, 46) 60% 100%) no-repeat 100% 100%;
+    background-size: 300% 100%;
+    transition: background-position 0.4s ease;
+    cursor: pointer;
+    color: white;
+	font-weight: bold;
 }
 
 .auth-links > a:first-child:hover {
-  background-color: black;
-  color: white;
+  /* background-color: rgb(54, 167, 116); */
+  color: black;
+  background-position: 0% 100%;
 }
 
 .auth-links > a:nth-child(2) {
-  background-color: #6f8dae;
+  /* background-color: rgb(39, 76, 156); */
+    background: linear-gradient(104deg,rgb(54, 181, 116) 60%,rgb(39, 38, 46) 60% 100%) no-repeat 100% 100%;
+    background-size: 300% 100%;
+    transition: background-position 0.4s ease;
+    cursor: pointer;
+    color: white;
+	font-weight: bold;
 }
 
 .auth-links > a:nth-child(2):hover {
-  background-color: black;
-  color: white;
+  /* background-color: rgb(54, 167, 116); */
+  color: black;
+  background-position: 0% 100%;
 }
 
 .nav-links > a {
@@ -98,6 +117,17 @@ body {
     background-repeat: no-repeat;
     background-color: rgba(249, 247, 240, 0.4);
     /* opacity: 1; */
+    background-blend-mode: lighten;
+    margin: 0 0 0 -8px;
+}
+
+.signin-page {
+    background-image: url("https://images.pexels.com/photos/4291/door-green-closed-lock.jpg");
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: rgba(249, 247, 240, 0.4);
     background-blend-mode: lighten;
     margin: 0 0 0 -8px;
 }
@@ -182,7 +212,7 @@ button {
   border-radius: 8px;
   color: white;
   font-weight: bold;
-  background-color: #274c9c;
+  background-color: rgb(54, 167, 116);
   padding: 7px 15px;
   margin: 10px 0;
 }
