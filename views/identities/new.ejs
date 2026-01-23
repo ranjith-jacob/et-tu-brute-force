@@ -13,7 +13,7 @@
         <div class="new-form-container">
             <h1>Add a new Identity!</h1>
             
-            <form action="/identities" method="POST"> <!-- removing "required" property for every checkbox in form due to HTML checkbox behaviour -->
+            <form action="/identities" method="POST">
 
                 <label for="name">Identity name:</label>
                 <input type="text" name="name" id="name" required />
@@ -31,7 +31,6 @@
                 <input type="checkbox" name="mfaPresent" id="mfa-present" />
                 
                 <label for="pwd-strength">Password strength:</label>
-                <!-- <input type="select" name="pwdStrength" id="pwd-strength" required /> -->
                 <select name="pwdStrength" id="pwd-strength" required >
                     <option value="weak">Weak</option>
                     <option value="medium">Medium</option>
@@ -44,8 +43,7 @@
                 <input type="checkbox" name="pwnedStatus" id="pwned-status" />
                 
                 <label for="notes">Notes:</label>
-                <!-- <input type="textarea" name="notes" id="notes" /> -->
-                <textarea name="notes" id="notes" rows="4" cols="10" wrap="hard"></textarea> <!-- disable resizing of textarea using CSS -->
+                <textarea name="notes" id="notes" rows="4" cols="10" wrap="hard"></textarea>
 
                 <button type="submit">Submit!</button>
             </form>

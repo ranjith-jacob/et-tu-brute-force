@@ -24,11 +24,11 @@ const identitySchema = new mongoose.Schema({
         required: true,
         default: false
     },
-    pwdStrength: { // dropdown menu to be added in ejs, along with paragraph
+    pwdStrength: {
         type: String,
         required: true
     },
-    pwnedStatus: { // direct to haveibeenpwned for manual check
+    pwnedStatus: {
         type: Boolean,
         required: true,
         default: false

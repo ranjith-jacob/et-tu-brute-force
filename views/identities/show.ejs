@@ -19,7 +19,6 @@
                     <div class="show-header">
                         <h1>Identity for <%= identity.name %>
                         </h1>
-                        <!-- changes default rendering of date format using .toLocaleDateString -->
                         <h3>Last updated: <%= identity.lastUpdated.toLocaleDateString(undefined, { year: "numeric" ,
                                 month: "long" , day: "numeric" }); %>
                         </h3>
@@ -27,7 +26,6 @@
 
                     <div class="show-details-container">
                         <h3>Details</h3>
-                        <!-- render weak/medium/strong with initial caps -->
                         <p>Has this password been reused? <%= identity.pwdReused===true ? "Yes" : "No" %>
                         </p>
                         <p>Is this password being stored in a Password Manager? <%= identity.storedInPwdManager===true
@@ -42,7 +40,6 @@
                         <p>Notes: <%= identity.notes %>
                         </p>
 
-                        <!-- restructure below to be more relevant -->
                         <% if (identity.owner._id.equals(user._id)) { %>
                             <div class="owner-container">
                                 <p>You own this!</p>
@@ -51,7 +48,6 @@
                                     <button class="delete-btn" type="submit">Delete this Identity</button>
                                 </form>
                             </div>
-                            <!-- set up unauthorised pg for below -->
                             <% } else { %>
                                 <p>You are not authorised to access this.</p>
                                 <%= res.redirect("/"); %>

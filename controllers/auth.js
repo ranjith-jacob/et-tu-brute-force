@@ -20,11 +20,8 @@ router.post("/sign-up", async (req, res) => {
         const hashedPassword = bcrypt.hashSync(req.body.password, 10);
         req.body.password = hashedPassword;
         const newUser = await User.create(req.body);
-        // res.send(`Thanks for signing up ${newUser.username}!`);
         res.redirect("/auth/sign-in"); 
     } catch (error) { 
-        console.log(error); 
-        // res.send("Form submission accepted!");
         res.redirect("/"); 
     }
 });
@@ -55,19 +52,15 @@ router.post("/sign-in", async (req, res)  => {
         req.session.save(() => {
             res.redirect("/identities");
         })
-        // res.redirect("/");
     } catch (error) {
-        console.log(error);
         res.redirect("/");
     }
 });
 
 router.get("/sign-out", (req, res) => {
-// res.send("The user wants to sign out!");
 req.session.destroy(() => {
     res.redirect("/");
 });
-// res.redirect("/");
 });
 
 module.exports = router;

@@ -5,19 +5,11 @@ body {
     display: flex;
     flex-direction: column;
     color: white;
-    /* height: 98.3vh;
-    width: 98.7vw; */
     height: 95vh;
     width: 100vw;
-    /* max-width: max-content; */
     background-color: rgba(47, 52, 61, 1);
-    /*investigate this */
     overflow: hidden;
 }
-
-/*light grey: rgb(83, 101, 126); */
-/* dark grey:rgba(47, 52, 61, 1) */
-/*green: rgb(54, 181, 116) */
 
 .landing-image > h1 {
     display: flex;
@@ -36,8 +28,6 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* justify-content: center; */
-    /* flex-wrap: wrap; */
     background-color: rgba(47, 52, 61, 0.8);
     max-height: 40vh;
     max-width: 40vw;
@@ -45,9 +35,7 @@ body {
     margin-top: 10vh;
     padding: 2rem;
     border-radius: 4px;
-    /* overflow-y: auto; */
     overflow-x: auto;
-    /* justify-content: center; */
 }
 
 #landing-heading {
@@ -78,7 +66,6 @@ body {
 }
 
 .logo-container > h1 {
-    /* display: flex; */
     margin: 0;
     font-size: 1.5rem;
 }
@@ -86,21 +73,9 @@ body {
 .logo-container > h1 > a {
     text-decoration: none;
     color: rgb(54, 167, 116);
-    /* background-color: rgb(255, 255, 255); */
     padding: 1.6rem;
     text-shadow: 3px 3px 5px rgb(0, 0, 0);
-    /* text-shadow: 1px 1px 2px green, 0 0 25px black, 0 0 5px white; */
 }
-
-/* .heading-icon {
-    background-image: url('https://cdn-icons-png.flaticon.com/128/11382/11382524.png');
-    width: 1.4em;
-    height: 1.4em;
-    background-repeat: no-repeat;
-    background-size: contain;
-    margin: 2px;
-    padding-left: 5px;
-} */
 
 .landing-image {
     background-image: url("https://images.pexels.com/photos/4291/door-green-closed-lock.jpg");
@@ -108,14 +83,12 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     margin: 0 0 0 -0.5rem;
-    /* max-width: 600px; */
 }
 
 .auth-links,
 .nav-links {
     display: flex;
     flex-wrap: wrap;
-    /* flex-basis: auto; */
     margin: 1.5625rem 1.25rem;
 }
 
@@ -128,7 +101,6 @@ body {
 }
 
 .auth-links > a:first-child {
-    /* background-color: rgb(39, 76, 156); */
     background: linear-gradient(104deg,rgb(54, 181, 116) 60%,rgb(0, 0, 0) 60% 100%) no-repeat 100% 100%;
     background-size: 300% 100%;
     transition: background-position 0.4s ease;
@@ -138,13 +110,11 @@ body {
 }
 
 .auth-links > a:first-child:hover {
-    /* background-color: rgb(54, 167, 116); */
     color: white;
     background-position: 0% 100%;
 }
 
 .auth-links > a:nth-child(2) {
-    /* background-color: rgb(39, 76, 156); */
     background: linear-gradient(104deg,rgb(54, 181, 116) 60%,rgb(0, 0, 0) 60% 100%) no-repeat 100% 100%;
     background-size: 300% 100%;
     transition: background-position 0.4s ease;
@@ -154,19 +124,15 @@ body {
 }
 
 .auth-links > a:nth-child(2):hover {
-    /* background-color: rgb(54, 167, 116); */
     color: white;
     background-position: 0% 100%;
 }
 
 .nav-content {
-    /* text-decoration: none; */
     display: flex;
-    /* margin: 0 0.625rem; */
     margin-right: 1.5rem;
     font-weight: bold;
     color: rgb(255, 255, 255);
-    /* justify-content: center; */
     align-items: baseline;
     max-height: 10vh;
     max-width: 100vw;
@@ -174,7 +140,6 @@ body {
 
 .nav-links > a {
     text-decoration: none;
-    /* display: flex; */
     margin: 0 0.625rem;
     font-weight: bold;
     color: rgb(255, 255, 255);
@@ -199,7 +164,6 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-color: rgba(249, 247, 240, 0.4);
-    /* opacity: 1; */
     background-blend-mode: lighten;
     margin: 0 0 0 -0.5rem;
 }
@@ -214,25 +178,6 @@ body {
     background-blend-mode: lighten;
     margin: 0 0 0 -0.5rem;
 }
-
-/* .signup-img {
-    background-image: url("https://images.pexels.com/photos/4291/door-green-closed-lock.jpg");
-    height: 100%;
-    width: 100%;
-    background-size: cover;
-    background-repeat: no-repeat;
-} */
-
-/* .signin-img {
-    background-image: url('https://images.unsplash.com/photo-1479839672679-a46483c0e7c8');
-    min-height: 110vh;
-    background-size: cover;
-    background-repeat: no-repeat;
-    width: 40%;
-    position: relative;
-    z-index: -10;
-    left: -10px;
-} */
 
 .signup-page,
 .signin-page {
@@ -257,7 +202,6 @@ body {
     padding: 10px 30px 20px;
     border: 1px solid gray;
     background-color: rgba(47, 52, 61, 1);
-    /* opacity: 0.6; */
 }
 
 .signup-form-container-2 > h1,
@@ -276,13 +220,7 @@ body {
 .signup-form-container-2 > form > input,
 .signin-form-container-2 > form > input {
     width: 96.7%;
-    /* max-width: 1200px; */
 }
-
-/* .signup-form-container-2 > form > button,
-.signin-form-container-2 > form > button {
-    width: 100%;
-} */
 
 label {
     font-size: 0.9em;
@@ -353,7 +291,6 @@ button:hover {
     flex-wrap: wrap;
     padding: 1.25rem 4.375rem;
     overflow: auto;
-    /* overflow-y: scroll; */
 }
 
 .card-container > a {
@@ -388,12 +325,9 @@ a > h4 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* height: 90%; */
     max-height: 80vh;
-    /* padding-top: 3vh; */
     max-width: 80vw;
     margin: 0 auto;
-    /* margin-top: 2rem; */
     overflow: auto;
 }
 
@@ -441,14 +375,6 @@ a > h4 {
     height: 100%;
     max-width: 100%;
 }
-
-/* .show-img {
-    background-image: url('https://images.unsplash.com/photo-1600585154526-990dced4db0d');
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 80%;
-    width: 40%;
-} */
 
 .show-info-container {
     display: flex;
@@ -539,7 +465,6 @@ footer {
     flex-direction: column;
     padding-left: 0.5rem;
     align-items: center;
-    /* justify-content: space-between; */
 }
 
 .footer-links > a {
@@ -580,26 +505,3 @@ footer {
     padding: 0.4375rem 1.25rem;
     margin-top: 0.75rem;
 }
-
-/* .favorites-container {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 60px 30px;
-    width: 70%;
-    border: 1px solid gray;
-    margin: 10px 0;
-}
-
-.favorites-count {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 0 10px;
-}
-
-.favorites-count > h2 {
-    font-size: 1.1em;
-    margin: 0 10px;
-} */
