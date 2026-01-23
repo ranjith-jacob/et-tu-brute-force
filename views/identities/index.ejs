@@ -9,25 +9,26 @@
 <body>
     <%- include("../partials/_navbar.ejs") %>
     <div class="page-wrapper">
-    <div class="index-header">
-        <h1>Your Saved Identities:</h1>
-        <a href="/identities/new">+ Add a New Identity!</a>
-    </div>
+        <div class="index-header">
+            <h1>Your Saved Identities:</h1>
+            <a href="/identities/new">+ Add a New Identity!</a>
+        </div>
     
-    <div class="card-container">
+        <div class="card-container">
             <% identities.forEach((identity) => { %>
-                <a href="/identities/<%= identity._id %>">
+                <a
+                href="/identities/<%= identity._id %>">
                     <h4><%= identity.name %> Identity</h4>
                     <p>Owned by <%= identity.owner.username %></p>
                 </a>
             <% }); %>
-    </div>
+        </div>
     </div>
 </body>
 <footer>
     <div class="footer-links">
-    <a href="https://github.com/ranjith-jacob">Github</a>
-    <a href="#">Privacy Policy</a>
+        <a href="https://github.com/ranjith-jacob">Github</a>
+        <a href="#">Privacy Policy</a>
     </div>
     <div class="footer-msg">
         <p>This is a work in progress, check back later for more updates!</p>
