@@ -45,6 +45,13 @@ app.get("/", (req, res) => {
     });
 });
 
+// Changed line below from app.get("*", (req, res) => { code }) due to <PathError [TypeError]: Missing parameter name at index 1: *; visit https://git.new/pathToRegexpError for info>
+app.get("/*path", (req, res) => {
+    res.render("error.ejs", {
+        msg: "Page not found!"
+    });
+});
+
 // app.get("/vip-lounge", (req, res) => {
 //   if (req.session.user) {
 //     res.send(`Welcome to the party ${req.session.user.username}.`);

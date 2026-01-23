@@ -1,22 +1,58 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700");
 
 body {
-  font-family: "Montserrat", sans-serif;
-  display: flex;
-  flex-direction: column;
-  color: white;
-  /* height: 98.3vh;
-  width: 98.7vw; */
-  height: 97vh;
-  width: 100vw;
-  /* max-width: max-content; */
-  background-color: rgba(47, 52, 61, 1);
-  overflow: hidden; /*investigate this */
+    font-family: "Montserrat", sans-serif;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    /* height: 98.3vh;
+    width: 98.7vw; */
+    height: 95vh;
+    width: 100vw;
+    /* max-width: max-content; */
+    background-color: rgba(47, 52, 61, 1);
+    /*investigate this */
+    overflow: hidden;
 }
 
 /*light grey: rgb(83, 101, 126); */
 /* dark grey:rgba(47, 52, 61, 1) */
 /*green: rgb(54, 181, 116) */
+
+.landing-image > h1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 2.5rem;
+    color: black;
+    text-shadow: 2px 2px 4px rgb(54, 167, 116, 0.6);
+}
+
+.landing-image > h1 > small {
+    font-size: 0.55rem;
+}
+
+.landing-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+    /* flex-wrap: wrap; */
+    background-color: rgba(47, 52, 61, 0.8);
+    max-height: 40vh;
+    max-width: 40vw;
+    margin: 0 auto;
+    margin-top: 10vh;
+    padding: 2rem;
+    border-radius: 4px;
+    /* overflow-y: auto; */
+    overflow-x: auto;
+    /* justify-content: center; */
+}
+
+#landing-heading {
+    padding: 3px;
+}
 
 .page-wrapper {
     background-color: rgb(83, 101, 126);
@@ -308,6 +344,8 @@ button:hover {
   display: flex;
   flex-wrap: wrap;
   padding: 1.25rem 4.375rem;
+  overflow: auto;
+  /* overflow-y: scroll; */
 }
 
 .card-container > a {
@@ -328,7 +366,7 @@ button:hover {
 .card-container > a:hover {
   background-color: rgba(47, 52, 61, 0.8);
   color: white;
-  box-shadow: 2px 3px black;
+  box-shadow: 2px 3px rgba(255, 255, 255, 0.6);
   
 }
 
@@ -351,6 +389,7 @@ a > h4 {
   flex-direction: column;
   border: 2px solid rgb(54, 181, 116);
   padding: 0.625rem 2.5rem;
+  margin-top: 3rem;
   background-color: rgba(47, 52, 61, 1);
 }
 
@@ -470,7 +509,8 @@ a > h4 {
 footer {
     display: flex;
     justify-content: flex-start;
-    max-height: 3vh;
+    max-height: 5vh;
+    height: 4vh;
     width: 100vw;
     gap: 35vw;
     margin-top: 0.3rem;
@@ -493,6 +533,26 @@ footer {
 .footer-links > a:hover {
     color: rgb(54, 181, 116);
     cursor: pointer;
+}
+
+.error-page-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 100vw;
+    background-color: rgba(47, 52, 61, 1);
+    margin: 0 auto;
+    width: 40vw;
+    margin-top: 1rem;
+}
+
+.error-page-wrap > img {
+    width: 30vw;
+}
+
+.error-page-wrap > button {
+   padding: 0.4375rem 1.25rem;
+   margin-top: 0.75rem;
 }
 
 /* .favorites-container {
