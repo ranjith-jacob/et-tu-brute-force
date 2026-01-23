@@ -1,54 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/stylesheets/style.css" />
-    <title><%= identity.owner.username %>'s identity</title>
+    <title>
+        <%= identity.owner.username %>'s identity
+    </title>
 </head>
+
 <body>
     <%- include("../partials/_navbar.ejs") %>
-
-    <div class="show-page-container">
-        <div class="show-img"></div>
-        <div class="show-info-container">
-            <div class="show-header">
-                <h1>Identity for <%= identity.name %></h1>
-                <!-- changes default rendering of date format using .toLocaleDateString -->
-                <h3>Last updated: <%= identity.lastUpdated.toLocaleDateString(undefined, {
-                    year: "numeric",
-                    month: "long",
-                    day: "numeric"
-                    }); %>
-                </h3>
-            </div>
-
-            <div class="show-details-container">
-                <h3>Details</h3>
-                <!-- render weak/medium/strong with initial caps -->
-                    <p>Has this password been reused? <%= identity.pwdReused === true ? "Yes" : "No" %> </p>
-                    <p>Is this password being stored in a Password Manager? <%= identity.storedInPwdManager === true ? "Yes" : "No" %> </p>
-                    <p>Is MFA in use for this Identity? <%= identity.mfaPresent === true ? "Yes" : "No" %> </p>
-                    <p>Password strength: <%= identity.pwdStrength %> </p>
-                    <p>Has this password been leaked before? <%= identity.pwnedStatus === true ? "Yes" : "No" %> </p>
-                    <p>Notes: <%= identity.notes %> </p>
-
-                    <!-- restructure below to be more relevant -->
-                    <% if (identity.owner._id.equals(user._id)) { %>
-                    <div class="owner-container">
-                        <p>You own this!</p>
-                        <a href="/identities/<%= identity._id %>/edit">Edit this Identity</a>
-                        <form action="/identities/<%=identity._id %>?_method=DELETE" method="POST">
-                            <button type="submit">Delete this Identity</button>
-                        </form>
+        <div class="page-wrapper">
+            <div class="show-page-container">
+                <div class="show-img"></div>
+                <div class="show-info-container">
+                    <div class="show-header">
+                        <h1>Identity for <%= identity.name %>
+                        </h1>
+                        <!-- changes default rendering of date format using .toLocaleDateString -->
+                        <h3>Last updated: <%= identity.lastUpdated.toLocaleDateString(undefined, { year: "numeric" ,
+                                month: "long" , day: "numeric" }); %>
+                        </h3>
                     </div>
-                    <!-- set up unauthorised pg for below -->
-                    <% } else { %>
-                    <p>You are not authorised to access this.</p>
-                    <%= res.redirect("/"); %>
-                    <% } %>
+
+                    <div class="show-details-container">
+                        <h3>Details</h3>
+                        <!-- render weak/medium/strong with initial caps -->
+                        <p>Has this password been reused? <%= identity.pwdReused===true ? "Yes" : "No" %>
+                        </p>
+                        <p>Is this password being stored in a Password Manager? <%= identity.storedInPwdManager===true
+                                ? "Yes" : "No" %>
+                        </p>
+                        <p>Is MFA in use for this Identity? <%= identity.mfaPresent===true ? "Yes" : "No" %>
+                        </p>
+                        <p>Password strength: <%= identity.pwdStrength %>
+                        </p>
+                        <p>Has this password been leaked before? <%= identity.pwnedStatus===true ? "Yes" : "No" %>
+                        </p>
+                        <p>Notes: <%= identity.notes %>
+                        </p>
+
+                        <!-- restructure below to be more relevant -->
+                        <% if (identity.owner._id.equals(user._id)) { %>
+                            <div class="owner-container">
+                                <p>You own this!</p>
+                                <a href="/identities/<%= identity._id %>/edit">Edit this Identity</a>
+                                <form action="/identities/<%=identity._id %>?_method=DELETE" method="POST">
+                                    <button class="delete-btn" type="submit">Delete this Identity</button>
+                                </form>
+                            </div>
+                            <!-- set up unauthorised pg for below -->
+                            <% } else { %>
+                                <p>You are not authorised to access this.</p>
+                                <%= res.redirect("/"); %>
+                                    <% } %>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
 </body>
+<footer>
+    <div class="footer-links">
+        <a href="https://github.com/ranjith-jacob">Github</a>
+        <a href="#">Privacy Policy</a>
+    </div>
+    <div class="footer-msg">
+        <p>This is a work in progress, check back later for more updates!</p>
+    </div>
+</footer>
+
 </html>

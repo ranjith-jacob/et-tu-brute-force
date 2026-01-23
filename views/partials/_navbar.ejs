@@ -5,11 +5,17 @@
             <div class="heading-icon"></div>
             <h1><a href="/">Et Tu, Brute Force?</a></h1>
         </div>
-        <div class="nav-links">
-            <a href="/">Home</a>
-            <a href="./">Back</a> <!-- modify Back button, currently elementary -->
-            <a href="/identities">View all Identities</a>
-            <a href="/auth/sign-out">Sign Out</a>
+        <div class="nav-content">
+            <div class="nav-welcome">
+                <p>Welcome, <%= user.username %>!</p>
+            </div>
+            <div class="nav-links">
+                <a href="/">Home</a>
+                <a href="./">Back</a> <!-- modify Back button, currently elementary -->
+                <a href="/identities">View all Identities</a>
+                <a href="/identities/new">Add New Identity</a>
+                <a href="/auth/sign-out">Sign Out</a>
+            </div>
         </div>
     </div>
     <% } else { %>

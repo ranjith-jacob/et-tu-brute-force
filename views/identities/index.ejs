@@ -8,7 +8,7 @@
 </head>
 <body>
     <%- include("../partials/_navbar.ejs") %>
-
+    <div class="page-wrapper">
     <div class="index-header">
         <h1>Your Saved Identities:</h1>
         <a href="/identities/new">+ Add a New Identity!</a>
@@ -22,5 +22,15 @@
                 </a>
             <% }); %>
     </div>
+    </div>
 </body>
+<footer>
+    <div class="footer-links">
+    <a href="https://github.com/ranjith-jacob">Github</a>
+    <a href="#">Privacy Policy</a>
+    </div>
+    <div class="footer-msg">
+        <p>This is a work in progress, check back later for more updates!</p>
+    </div>
+</footer>
 </html>
