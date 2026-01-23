@@ -14,7 +14,7 @@ router.get("/", async (req, res) => {
             identities: getAllIdentities,
         });
     } catch (error) {
-        console.log(error); // consider error.message here
+        console.log(error.message); // consider error.message here
         res.redirect("/");
     }
 });
@@ -49,13 +49,17 @@ router.get("/:identityId", async (req, res) => {
       _id: req.params.identityId // required syntax for .findOne
     }).populate("owner");
 
-    if (!populatedIdentity) return res.redirect("/identities") //! change this to a 'not authorised' page
+    if (!populatedIdentity) return res.redirect("/identities") // change this to a 'not authorised' page
     res.render("identities/show.ejs", {
       identity: populatedIdentity
     });
   } catch (error) {
     console.log(error);
-    res.redirect("/");
+    // res.redirect("/");
+    // Below causes further errors //Retry this
+    res.render("error.ejs", {
+        msg: "Resource not found!"
+    });
   }
 });
 

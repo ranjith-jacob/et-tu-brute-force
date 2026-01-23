@@ -45,13 +45,6 @@ app.get("/", (req, res) => {
     });
 });
 
-// Changed line below from app.get("*", (req, res) => { code }) due to <PathError [TypeError]: Missing parameter name at index 1: *; visit https://git.new/pathToRegexpError for info>
-app.get("/*path", (req, res) => {
-    res.render("error.ejs", {
-        msg: "Page not found!"
-    });
-});
-
 // app.get("/vip-lounge", (req, res) => {
 //   if (req.session.user) {
 //     res.send(`Welcome to the party ${req.session.user.username}.`);
@@ -62,6 +55,13 @@ app.get("/*path", (req, res) => {
 
 app.use("/auth", authController);
 app.use("/identities", isSignedIn, identitiesController);
+
+// Changed line below from app.get("*", (req, res) => { code }) due to <PathError [TypeError]: Missing parameter name at index 1: *; visit https://git.new/pathToRegexpError for info>
+app.get("/*path", (req, res) => {
+    res.render("error.ejs", {
+        msg: "Page not found!"
+    });
+});
 
 app.listen(port, () => {
     console.log(`The express app is ready on port ${port}!`);

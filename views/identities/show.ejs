@@ -37,7 +37,7 @@
                         </p>
                         <p>Password strength: <%= identity.pwdStrength %>
                         </p>
-                        <p>Has this password been leaked before? <%= identity.pwnedStatus===true ? "Yes" : "No" %>
+                        <p><span title="Go to https://haveibeenpwned.com/Passwords | Enter your password to check results">Has this password been leaked before? <sup>&#9432;</sup></span> <%= identity.pwnedStatus===true ? "Yes" : "No" %>
                         </p>
                         <p>Notes: <%= identity.notes %>
                         </p>
