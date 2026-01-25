@@ -6,7 +6,7 @@
     <p>An application to help you identify and resolve weaknesses in your digital precautions!</p>
 
 <h3>Test my app here:</h3>
-<p><a href="#" target="_blank">#</a></p>
+<p><a href="https://et-tu-brute-force-cf7eef982c0c.herokuapp.com/" target="_blank">Heroku | Et Tu, Brute Force?</a></p>
 
 <h3>Assets used:</h3>
 <ul>
